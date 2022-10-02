@@ -5,8 +5,9 @@ A Receita Federal disponibiliza os arquivos de dados públicos de CNPJ para pess
 
 Requerimentos:
 - Linux
-- wget
 - gcc
+- wget
+- aria2c
 
 
 ```bash
@@ -15,6 +16,12 @@ cd dados-publicos-cnpj
 chmod +x links.sh
 gcc downloader.c -o downloader -lpthread
 ./downloader 
+```
+
+Alternativas:
+
+```bash
+aria2c --file-allocation=none -c -x 16 -s 16 URL
 ```
 
 
